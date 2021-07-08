@@ -5,7 +5,7 @@ This contains a helper function for loading and saving CSV files.
 
 """
 import csv
-
+from pathlib import Path
 
 def load_csv(csvpath):
     """Reads the CSV file from path provided.
@@ -28,3 +28,31 @@ def load_csv(csvpath):
         for row in csvreader:
             data.append(row)
     return data
+
+
+def save_csv(qualifying_loans, output):
+    """Writes the CSV file to the path provided.
+    
+    Args:
+        qualifying_loans (list of lists): The qualifying bank loans.
+        output: the filepath destination of where the CSV should be saved.
+
+    Returns:
+        output csv
+        
+    """
+    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
+
+    # Set the output file path
+    output_path = Path(output)
+
+    # @TODO: Use the csv library and `csv.writer` to write the header row
+    # and each row of `banks` from the `bank_data_filtered` list.
+    with open(output_path, "w") as csvfile:
+        #create a csvwriter
+        csvwriter = csv.writer(csvfile, delimiter=",")
+        #writing the header to CSV file first
+        csvwriter.writerow(header)
+        #writing the values to each row in the CSV
+        for row in qualifying_loans:
+            csvwriter.writerow(row)
