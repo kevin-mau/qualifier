@@ -111,7 +111,7 @@ def save_qualifying_loans(qualifying_loans):
 
     Returns:
         output_path: a pathway where the user would like the resulting CSV to be saved.
-
+        answer: This is the user's request whether to save the CSV or not.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
@@ -130,9 +130,10 @@ def save_qualifying_loans(qualifying_loans):
             print("This program will exit now as you have opted out of saving the list of qualifying loans to CSV.  Thank you.")
             
     else:
+        answer = False
         print("This program will exit now as there are no qualifying loans.  Thank you.")
 
-    return output_path
+    return output_path, answer
 
 
 def run():
@@ -150,10 +151,10 @@ def run():
     )
 
     # Save qualifying loans
-    output = save_qualifying_loans(qualifying_loans)
+    output, answer = save_qualifying_loans(qualifying_loans)
 
     # HELP ME
-    save_csv(qualifying_loans, output)    
+    save_csv(qualifying_loans, output, answer)    
 
 
 if __name__ == "__main__":
