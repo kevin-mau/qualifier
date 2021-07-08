@@ -6,4 +6,5 @@ This is a command line application to match applicants with qualifying loans.
 
 Example:
     $ python app.py
+    Rate sheet is stored in: data\daily_rate_sheet.csv
 ---
