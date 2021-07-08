@@ -30,29 +30,32 @@ def load_csv(csvpath):
     return data
 
 
-def save_csv(qualifying_loans, output):
+def save_csv(qualifying_loans, output, answer):
     """Writes the CSV file to the path provided.
     
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
         output: the filepath destination of where the CSV should be saved.
-
+        answer: This is the user's request (from save_qualifying_loans) whether to save the CSV or not.
+                If they answered Yes, then answer is True, and save_csv function will save the CSV.
     Returns:
         output csv
         
     """
-    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
+    if answer == True:
+        header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
 
     # Set the output file path
-    output_path = Path(output)
+        output_path = Path(output)
 
     # @TODO: Use the csv library and `csv.writer` to write the header row
     # and each row of `banks` from the `bank_data_filtered` list.
-    with open(output_path, "w") as csvfile:
-        #create a csvwriter
-        csvwriter = csv.writer(csvfile, delimiter=",")
-        #writing the header to CSV file first
-        csvwriter.writerow(header)
-        #writing the values to each row in the CSV
-        for row in qualifying_loans:
-            csvwriter.writerow(row)
+        with open(output_path, "w") as csvfile:
+            #create a csvwriter
+            csvwriter = csv.writer(csvfile, delimiter=",")
+            #writing the header to CSV file first
+            csvwriter.writerow(header)
+            #writing the values to each row in the CSV
+            for row in qualifying_loans:
+                csvwriter.writerow(row)
+    return            
