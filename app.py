@@ -125,7 +125,7 @@ def save_qualifying_loans(qualifying_loans):
             output_path = Path(output_path)
             if not output_path.exists():
                 sys.exit(f"Oops! Can't find this path: {output_path}")
-
+            print("The CSV of qualified loans has successfully saved in the requested folder.  Thank you.")
         else:
             print("This program will exit now as you have opted out of saving the list of qualifying loans to CSV.  Thank you.")
             
