@@ -4,8 +4,10 @@
 ---
 **Instructions:**
 
-run '''python app.py''' in the command line.
-
+run the python app in the command line: 
+'''python
+python app.py
+'''
 the Rate sheet is stored in: [data\daily_rate_sheet.csv](data\daily_rate_sheet.csv)
 
 Then enter the following information for the potential borrower:
