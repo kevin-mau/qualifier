@@ -104,14 +104,14 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
 
 def save_qualifying_loans(qualifying_loans):
-    """Saves the qualifying loans to a CSV file.
+    """Gathers information to help save_csv in fileio to save the qualifying loans to a CSV file.
 
     Args:
-        qualifying_loans (list of lists): The qualifying bank loans.
+        qualifying_loans (list of lists): The list of qualifying bank loans.
 
     Returns:
         output_path: a pathway where the user would like the resulting CSV to be saved.
-        save_csv_answer: This is the user's request whether to save the CSV or not.
+        save_csv_answer: This is the user's decision whether to save the CSV or not.
     """
     # Completing the usability dialog for savings the CSV Files.
 
