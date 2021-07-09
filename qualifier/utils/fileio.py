@@ -30,19 +30,17 @@ def load_csv(csvpath):
     return data
 
 
-def save_csv(qualifying_loans, output, answer):
+def save_csv(qualifying_loans, output, save_csv_answer):
     """Writes the CSV file to the path provided.
     
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
         output: the filepath destination of where the CSV should be saved.
-        answer: This is the user's request (from save_qualifying_loans) whether to save the CSV or not.
-                If they answered Yes, then answer is True, and save_csv function will save the CSV.
-    Returns:
-        output csv
+        save_csv_answer: This is the user's answer (from save_qualifying_loans) whether to save the CSV or not.
+        If they answered Yes, then answer is True, and save_csv function will save the CSV.       
         
     """
-    if answer == True:
+    if save_csv_answer == True:
         header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
 
     # Set the output file path
@@ -57,5 +55,4 @@ def save_csv(qualifying_loans, output, answer):
             csvwriter.writerow(header)
             #writing the values to each row in the CSV
             for row in qualifying_loans:
-                csvwriter.writerow(row)
-    return            
+                csvwriter.writerow(row)            
