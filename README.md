@@ -1,7 +1,7 @@
 # *Loan Qualifier Application*
 ---
 ### The Loan Qualifier Application analyzes a rate sheet of banks alongside the borrower's loan information, then returns the number of mortgage loans that the borrower can qualify.  
-### This fintech tool, that is written in python, is a command line application where the user will enter the borrower's data and can choose to receive a CSV output of their qualified mortgage loans. 
+### This fintech tool, that is written in python, is a command line application where the user will enter the borrower's data and can choose whether they want to receive a CSV output of their qualified mortgage loans. 
 ---
 ## Technologies:
 
