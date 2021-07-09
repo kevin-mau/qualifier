@@ -10,6 +10,9 @@ This application utilizes python 3.7 along with the packages below:
 * [fire](https://github.com/google/python-fire) - This is for the command line interface.
 
 * [questionary](https://github.com/tmbo/questionary) - This makes it an interactive user experience to gather their loan data for the application.
+
+* [pytest](https://docs.pytest.org/en/stable/) - For basic assertion testing of the program's calculations, filters, and file paths.
+
 ---
 ## Installation Guide
 
@@ -18,11 +21,17 @@ Prior to running the application, you will need to install these dependencies:
 ```python
   pip install fire
   pip install questionary
+  pip install pytest
+  pip install mkdocs
 ```
 
 ## Instructions:
 
-Clone the repository and then in your command line run the python application: **app.py**
+Clone the repository and then in your command line run the python application **app.py** as such:
+
+```python
+python app.py
+```
 
 It will first ask you the file path to the daily rate sheet.
 
