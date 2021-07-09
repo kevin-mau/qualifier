@@ -47,7 +47,7 @@ Then enter the following information for the potential borrower:
 
 The loan qualifier will determine the borrower's monthly debt-to-income ratio and the loan-to-value ratio of their mortgage loan.  It will also determine which bank loans the borrower will qualify for.  
 
-If the borrower qualifies for any of the bank loans offered on the rate sheet, you will have the option to save and view the list of approved loans on a CSV file output.  The CSV output should be stored in: [data\output\qualifed_loans.csv](https://github.com/kevin-mau/qualifier/blob/main/data/output/qualifying_loans.csv)
+If the borrower qualifies for any of the bank loans offered on the rate sheet, you will have the option to save and view the list of approved loans on a CSV file output.  The CSV output should be stored in: [data\output\qualifying_loans.csv](https://github.com/kevin-mau/qualifier/blob/main/data/output/qualifying_loans.csv)
 
 ---
 
