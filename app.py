@@ -111,29 +111,25 @@ def save_qualifying_loans(qualifying_loans):
 
     Returns:
         output_path: a pathway where the user would like the resulting CSV to be saved.
-        answer: This is the user's request whether to save the CSV or not.
+        save_csv_answer: This is the user's request whether to save the CSV or not.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
-    # This will be the default filepath for the CSV output
-    output_path = Path("data\qualified.csv")
+    # Completing the usability dialog for savings the CSV Files.
 
     if len(qualifying_loans) > 0:
-        answer = questionary.confirm("Please confirm if you want your qualifying loans saved into a file(.csv)?:").ask()
-        if answer == True:
-            output_path = questionary.text("Enter a destination file path for your list of qualified loans rate-sheet (.csv):").ask()    
+        save_csv_answer = questionary.confirm("Please confirm if you want your qualifying loans saved into a CSV?:").ask()
+        if save_csv_answer == True:
+            output_path = questionary.text("Enter a file path for your list of qualified loans:").ask()  
             output_path = Path(output_path)
             if not output_path.exists():
                 sys.exit(f"Oops! Can't find this path: {output_path}")
-            print("The CSV of qualified loans has successfully saved in the requested folder.  Thank you.")
         else:
             print("This program will exit now as you have opted out of saving the list of qualifying loans to CSV.  Thank you.")
             
     else:
-        answer = False
+        save_csv_answer = False
         print("This program will exit now as there are no qualifying loans.  Thank you.")
 
-    return output_path, answer
+    return output_path, save_csv_answer
 
 
 def run():
@@ -151,10 +147,10 @@ def run():
     )
 
     # Save qualifying loans
-    output, answer = save_qualifying_loans(qualifying_loans)
+    output, save_csv_answer = save_qualifying_loans(qualifying_loans)
 
-    # HELP ME
-    save_csv(qualifying_loans, output, answer)    
+    # Function to write CSV for the list of qualified loans
+    save_csv(qualifying_loans, output, save_csv_answer)    
 
 
 if __name__ == "__main__":
