@@ -1,10 +1,9 @@
-# Loan Qualifier Application
-A fintech tool that analyzes a rate sheet and returns the loans that a borrower is qualified for.
+# *Loan Qualifier Application*
 ---
+### A fintech tool that analyzes a rate sheet and returns the loans that a borrower is qualified for.
+### This is a command line application to match potential borrowers with qualifying mortgage loans.
 
-## This is a command line application to match potential borrowers with qualifying mortgage loans.
-
-**Instructions:
+**Instructions:**
 run $ python app.py
 the Rate sheet is stored in: data\daily_rate_sheet.csv
 * enter credit score
