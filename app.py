@@ -113,8 +113,9 @@ def save_qualifying_loans(qualifying_loans):
         output_path: a pathway where the user would like the resulting CSV to be saved.
         save_csv_answer: This is the user's decision whether to save the CSV or not.
     """
+    #default pathway for output file
+    output_path = Path('data\output\qualifying_loans.csv')
     # Completing the usability dialog for savings the CSV Files.
-
     if len(qualifying_loans) > 0:
         save_csv_answer = questionary.confirm("Please confirm if you want your qualifying loans saved into a CSV?:").ask()
         if save_csv_answer == True:
