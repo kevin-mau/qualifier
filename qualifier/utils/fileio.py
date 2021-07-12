@@ -36,7 +36,7 @@ def save_csv(qualifying_loans, output, save_csv_answer):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
         output: the filepath destination of where the CSV should be saved.
-        save_csv_answer: This is the user's answer (from save_qualifying_loans) whether to save the CSV or not.
+        save_csv_answer: This is the user's answer (from the save_qualifying_loans function) whether to save the CSV or not.
         If they answered Yes, then answer is True, and save_csv function will save the CSV.       
         
     """
@@ -46,8 +46,9 @@ def save_csv(qualifying_loans, output, save_csv_answer):
     # Set the output file path
         output_path = Path(output)
 
-    # @TODO: Use the csv library and `csv.writer` to write the header row
-    # and each row of `banks` from the `bank_data_filtered` list.
+    # Using the csv library and `csv.writer` to write the header row
+    # and each row of banks from the `qualifying_loans` list.
+    
         with open(output_path, "w") as csvfile:
             #create a csvwriter
             csvwriter = csv.writer(csvfile, delimiter=",")
@@ -55,4 +56,4 @@ def save_csv(qualifying_loans, output, save_csv_answer):
             csvwriter.writerow(header)
             #writing the values to each row in the CSV
             for row in qualifying_loans:
-                csvwriter.writerow(row)            
+                csvwriter.writerow(row)          
