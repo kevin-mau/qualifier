@@ -1,6 +1,6 @@
 # *Loan Qualifier Application*
 ---
-### The Loan Qualifier Application analyzes a rate sheet of banks alongside the borrower's loan information, then returns the number of mortgage loans that the borrower can qualify.  
+### The Loan Qualifier Application analyzes a rate sheet of banks alongside the borrower's loan information, then returns the number of banks willing to underwrite the loan. 
 ### This fintech tool, that is written in python, is a command line application where the user will enter the borrower's data and can choose whether they want to receive a CSV output of their qualified mortgage loans. 
 ---
 ## Technologies:
@@ -45,9 +45,9 @@ Then enter the following information for the potential borrower:
 * desired loan amount
 * the home value
 
-The loan qualifier will determine the borrower's monthly debt-to-income ratio and the loan-to-value ratio of their mortgage loan.  It will also determine which bank loans the borrower will qualify for.  
+The loan qualifier will determine the borrower's monthly debt-to-income ratio and the loan-to-value ratio of their mortgage loan.  It will also print out the number of banks that are willing to underwrite the loan.
 
-If the borrower qualifies for any of the bank loans offered on the rate sheet, you will have the option to save and view the list of approved loans on a CSV file output.  The CSV output should be stored in: [data\output\qualifying_loans.csv](https://github.com/kevin-mau/qualifier/blob/main/data/output/qualifying_loans.csv)
+If the borrower qualifies for any of the bank loans offered on the rate sheet, you will have the option to save and view the list of qualified loans on a CSV file output.  The CSV output should be stored in: [data\output\qualifying_loans.csv](https://github.com/kevin-mau/qualifier/blob/main/data/output/qualifying_loans.csv)
 
 ---
 
