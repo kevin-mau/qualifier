@@ -56,4 +56,7 @@ def save_csv(qualifying_loans, output, save_csv_answer):
             csvwriter.writerow(header)
             #writing the values to each row in the CSV
             for row in qualifying_loans:
-                csvwriter.writerow(row)          
+                csvwriter.writerow(row) 
+
+            # if save_csv function writes CSV then it will return True.
+            return True
