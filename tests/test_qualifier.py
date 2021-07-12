@@ -46,7 +46,7 @@ def test_filters():
    
     assert len(max_loan_size.filter_max_loan_size(loan, bank_data)) == 18
 
-# testing that save_csv function will output a test csv to ./data/output/qualifying_loans.csv
+# testing that save_csv function will create an output test csv to ./data/output/qualifying_loans.csv
 def test_save_csv():  
     bank_data = fileio.load_csv(Path('data\daily_rate_sheet.csv')) 
     output =  Path('data\output\qualifying_loans.csv')
