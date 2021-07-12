@@ -107,7 +107,7 @@ def save_qualifying_loans(qualifying_loans):
     """Gathers information to help save_csv in fileio to save the qualifying loans to a CSV file.
 
     Args:
-        qualifying_loans (list of lists): The list of qualifying bank loans.
+        qualifying_loans (list of lists): The list of filtered qualifying bank loans.
 
     Returns:
         output_path: a pathway where the user would like the resulting CSV to be saved.
@@ -115,8 +115,10 @@ def save_qualifying_loans(qualifying_loans):
     """
     #default pathway for output file
     output_path = Path('data\output\qualifying_loans.csv')
-    # Completing the usability dialog for savings the CSV Files.
+    
+    # if there are 1 or more banks willing to underwrite the loan, the dialog to save results in CSV will prompt    
     if len(qualifying_loans) > 0:
+        # Completing the usability dialog for savings the CSV Files.
         save_csv_answer = questionary.confirm("Please confirm if you want your qualifying loans saved into a CSV?:").ask()
         if save_csv_answer == True:
             output_path = questionary.text("Enter a file path for your list of qualified loans:").ask()  
@@ -124,8 +126,10 @@ def save_qualifying_loans(qualifying_loans):
             if not output_path.exists():
                 sys.exit(f"Oops! Can't find this path: {output_path}")
         else:
+            # the user selected 'N' to saving the CSV, therefore opting out.  Dialog comes to an end.
             print("This program will exit now as you have opted out of saving the list of qualifying loans to CSV.  Thank you.")
-            
+
+    # the resulting list from the filters is empty, borrower doesn't qualify for any loans.  Dialog comes to an end.           
     else:
         save_csv_answer = False
         print("This program will exit now as there are no qualifying loans.  Thank you.")
